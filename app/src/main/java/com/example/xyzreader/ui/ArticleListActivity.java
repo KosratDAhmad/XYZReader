@@ -1,6 +1,5 @@
 package com.example.xyzreader.ui;
 
-import android.annotation.TargetApi;
 import android.app.LoaderManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -8,8 +7,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
-import android.os.Build;
-
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -44,10 +41,10 @@ public class ArticleListActivity extends ActionBarActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_list);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(mToolbar);
+//        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(mToolbar);
 
-        final View toolbarContainerView = findViewById(R.id.toolbar_container);
+//        final View toolbarContainerView = findViewById(R.id.toolbar_container);
 
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
 
@@ -58,23 +55,23 @@ public class ArticleListActivity extends ActionBarActivity implements
             refresh();
         }
 
-        if (null != toolbarContainerView) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-                mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-                    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-                    @Override
-                    public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                        super.onScrolled(recyclerView, dx, dy);
-                        int max = toolbarContainerView.getHeight();
-                        if (dy > 0) {
-                            toolbarContainerView.setTranslationY(Math.max(-max, toolbarContainerView.getTranslationY() - dy / 2));
-                        } else {
-                            toolbarContainerView.setTranslationY(Math.min(0, toolbarContainerView.getTranslationY() - dy / 2));
-                        }
-                    }
-                });
-            }
-        }
+//        if (null != toolbarContainerView) {
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+//                mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//                    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+//                    @Override
+//                    public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+//                        super.onScrolled(recyclerView, dx, dy);
+//                        int max = toolbarContainerView.getHeight();
+//                        if (dy > 0) {
+//                            toolbarContainerView.setTranslationY(Math.max(-max, toolbarContainerView.getTranslationY() - dy / 2));
+//                        } else {
+//                            toolbarContainerView.setTranslationY(Math.min(0, toolbarContainerView.getTranslationY() - dy / 2));
+//                        }
+//                    }
+//                });
+//            }
+//        }
     }
 
     private void refresh() {
