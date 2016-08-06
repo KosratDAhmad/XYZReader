@@ -22,4 +22,9 @@
         <item name="android:windowExitTransition">@android:transition/explode</item>
         <item name="android:windowReenterTransition">@android:transition/slide_top</item>
     </style>
+
+    <style name="AppTheme.Detail" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
 </resources>
