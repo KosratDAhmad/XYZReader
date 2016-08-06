@@ -11,5 +11,6 @@
     <dimen name="detail_body_horizontal_margin">48dp</dimen>
     <dimen name="app_bar_height">112dp</dimen>
     <dimen name="app_bar_elevation">4dp</dimen>
+    <dimen name="article_item_margin">4dp</dimen>
 
 </resources>
